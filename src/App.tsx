@@ -9,21 +9,23 @@ import {
   TextArea,
   Select,
 } from "./components";
-import { INote } from "./types";
+import { INote, ITag } from "./types";
 
 const App = () => {
-  const [tagSearch, setTagSearch] = useState<string>("");
   const [notes, setNotes] = useState<INote[]>([]);
+  const [tags, setTags] = useState<ITag[]>([]);
+  const [tagSearch, setTagSearch] = useState<string>("");
   const [noteModalActive, setNoteModalActive] = useState<boolean>(false);
   const [tagModalActive, setTagModalActive] = useState<boolean>(false);
-  const [title, setTitle] = useState<string>("");
-  const [note, setNote] = useState<string>("");
+  const [noteTitle, setNoteTitle] = useState<string>("");
+  const [noteText, setNoteText] = useState<string>("");
+  const [noteTags, setNoteTags] = useState<string>("");
   const [tag, setTag] = useState<string>("");
 
   const onNoteCancelHandler = () => {
     if (window.confirm("Are you sure?")) {
-      setTitle("");
-      setNote("");
+      setNoteTitle("");
+      setNoteText("");
       setNoteModalActive(false);
     }
   };
@@ -33,6 +35,17 @@ const App = () => {
       setTag("");
       setTagModalActive(false);
     }
+  };
+
+  const onNotCreateHandler = () => {
+    // const currentTag
+    // setNotes((prevNotes) => [...prevNotes, { title: title, text: note, tags }]);
+  };
+
+  const onNewTagHandler = () => {
+    setTags(() => [...tags, { name: tag }]);
+    setTag("");
+    setTagModalActive(false);
   };
 
   return (
@@ -58,20 +71,24 @@ const App = () => {
         <h1>New note</h1>
         <Input
           placeholder="Title"
-          value={title}
+          value={noteTitle}
           type="form__input"
-          setValue={(e) => setTitle(e.target.value)}
+          setValue={(e) => setNoteTitle(e.target.value)}
         />
         <TextArea
           placeholder="Note"
-          value={note}
+          value={noteText}
           type="form__input"
-          setValue={(e) => setNote(e.target.value)}
+          setValue={(e) => setNoteText(e.target.value)}
         />
-        <Select />
+        <Select tagsArray={tags} />
         <div className="btns-container">
-          <Button type="modal-btn" label="Save" /*onPress={onSaveHandler}*/ />
-          <Button type="modal-btn" label="Cancel" onPress={onNoteCancelHandler} />
+          <Button type="modal-btn" label="Save" onPress={onNotCreateHandler} />
+          <Button
+            type="modal-btn"
+            label="Cancel"
+            onPress={onNoteCancelHandler}
+          />
         </div>
       </Modal>
       <Modal active={tagModalActive} setActive={setTagModalActive}>
@@ -83,8 +100,12 @@ const App = () => {
           setValue={(e) => setTag(e.target.value)}
         />
         <div className="btns-container">
-          <Button type="modal-btn" label="Save" /*onPress={onSaveHandler}*/ />
-          <Button type="modal-btn" label="Cancel" onPress={onTagCancelHandler} />
+          <Button type="modal-btn" label="Save" onPress={onNewTagHandler} />
+          <Button
+            type="modal-btn"
+            label="Cancel"
+            onPress={onTagCancelHandler}
+          />
         </div>
       </Modal>
     </div>
