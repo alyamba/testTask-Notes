@@ -1,0 +1,22 @@
+@import "../../App.scss";
+
+.footer__div {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: $body-padding;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  user-select: none;
+}
+
+.creator {
+  color: $background-white;
+}
+
+.link {
+  margin-right: 4px;
+}

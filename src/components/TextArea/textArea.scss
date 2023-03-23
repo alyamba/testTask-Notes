@@ -1,0 +1,16 @@
+@import "../../App.scss";
+
+textarea {
+  resize: vertical;
+  width: calc(100% - 1em);
+  padding: 8px;
+  margin: 12px 0px;
+  font-size: 16px;
+  min-height: 1em;
+  max-height: 8em;
+  font-family: $open-sans;
+
+  border-radius: 4px;
+  border: 1px solid rgb(187, 187, 187);
+  outline-color: $app-background-color;
+}

@@ -1,0 +1,42 @@
+@import "../../App.scss";
+
+button {
+  padding: 8px 16px;
+  cursor: pointer;
+}
+
+.nav-btn {
+  background: #ffffff;
+  border: 0px;
+  border-radius: 4px;
+  margin: 0px 8px;
+  font-family: $open-sans;
+  font-size: 14px;
+  background: $background-white;
+
+  &:hover {
+    background-color: #ffe2ed;
+    box-shadow: 0px 1px 8px 1px #fa1d72a4;
+  }
+}
+
+.icon-btn {
+  background: none;
+  border: 0;
+  margin: 4px;
+  padding: 2px;
+}
+
+.modal-btn {
+  background: #ffe2ed;
+  border: 0px;
+  border-radius: 4px;
+  margin: 8px;
+  font-family: $open-sans;
+  font-size: 14px;
+
+  &:hover {
+    background-color: #ffe2ed;
+    box-shadow: 0px 1px 8px 1px #fa1d72a4;
+  }
+}

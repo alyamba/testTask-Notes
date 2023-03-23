@@ -1,6 +1,7 @@
 import React from "react";
-import gitURL from "../icons/github.svg";
-import linkedinURL from "../icons/linkedin.svg";
+import gitURL from "../../icons/github.svg";
+import linkedinURL from "../../icons/linkedin.svg";
+import "./footer.scss";
 
 export const Footer = () => {
   return (

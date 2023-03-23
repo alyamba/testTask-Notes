@@ -1,0 +1,34 @@
+@import "../../App.scss";
+
+.form-select {
+  background: #ffffff;
+  overflow: hidden;
+  border: 1px solid #cbcbcb;
+
+  border-radius: 4px;
+  width: 100%;
+  margin: 12px 0px;
+}
+
+select {
+  position: relative;
+  background: transparent;
+  background-image: none;
+  display: block;
+  width: 100%;
+  outline: none;
+  color: #888888;
+  cursor: pointer;
+  z-index: 2;
+  border: none;
+  padding: 8px;
+  font-size: 16px;
+  text-overflow: "";
+  font-family: $open-sans;
+  // text-indent: 5px;
+
+  option[disabled] {
+    background-color: #e0e0e0;
+    border: none;
+  }
+}

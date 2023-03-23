@@ -1,7 +1,9 @@
 import React from "react";
+import "./input.scss";
+
 export interface IInput {
   value: string;
-  setValue?: () => void;
+  setValue?: (e: React.ChangeEvent<HTMLInputElement>) => void;
   placeholder: string;
   type: string;
 }

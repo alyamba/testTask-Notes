@@ -1,0 +1,20 @@
+@import "../../App.scss";
+
+.notes-container {
+  padding: $body-padding;
+}
+
+.note {
+  background-color: $background-white;
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 300px;
+  margin: 20px;
+}
+
+.note-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}

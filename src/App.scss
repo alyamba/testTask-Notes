@@ -21,51 +21,6 @@ nav {
   flex-direction: row;
   justify-content: flex-end;
   box-shadow: 2px 2px 6px 2px #fa1d72a4;
-
-  button {
-    background: #ffffff;
-    border: 0px;
-    border-radius: 4px;
-    margin: 0px 8px;
-    font-family: $open-sans;
-    font-size: 14px;
-    background: $background-white;
-  }
-
-  button:hover {
-    background-color: #ffe2ed;
-    box-shadow: 0px 1px 8px 1px #fa1d72a4;
-  }
-}
-
-button {
-  padding: 8px 16px;
-  cursor: pointer;
-}
-
-.notes-container {
-  padding: $body-padding;
-}
-
-.note {
-  background-color: $background-white;
-  padding: 20px;
-  border-radius: 8px;
-  max-width: 300px;
-  margin: 20px;
-}
-
-.note-header {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  button {
-    background: none;
-    border: 0;
-    margin: 4px;
-    padding: 2px;
-  }
 }
 
 h1 {
@@ -77,34 +32,3 @@ h1 {
   width: 20px;
   height: 20px;
 }
-
-.search {
-  border-radius: 8px;
-  border: 0px;
-  padding: 4px;
-  background-color: #ffffff91;
-  margin-left: 8px;
-  font-size: 14px;
-}
-
-.footer__div{
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  padding: $body-padding;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  user-select:none;
-}
-
-.creator{
-  color: $background-white;
-}
-
-.link{
-  margin-right: 4px;
-}
-
