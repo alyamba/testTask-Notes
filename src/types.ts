@@ -1,10 +1,11 @@
 export interface ITag {
-  name: string;
+  value: string;
+  label: string;
 }
 
 export interface INote {
   title: string;
   text: string;
-  tags: ITag[];
+  // tags: ITag[];
 }
   

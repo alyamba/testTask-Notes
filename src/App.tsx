@@ -1,3 +1,4 @@
+import { MultiSelectChangeEvent } from "primereact/multiselect";
 import React, { useState } from "react";
 import "./App.scss";
 import {
@@ -19,8 +20,10 @@ const App = () => {
   const [tagModalActive, setTagModalActive] = useState<boolean>(false);
   const [noteTitle, setNoteTitle] = useState<string>("");
   const [noteText, setNoteText] = useState<string>("");
-  const [noteTags, setNoteTags] = useState<string>("");
+  const [noteTags, setNoteTags] = useState<string[]>([]);
   const [tag, setTag] = useState<string>("");
+
+  console.log(notes);
 
   const onNoteCancelHandler = () => {
     if (window.confirm("Are you sure?")) {
@@ -37,17 +40,19 @@ const App = () => {
     }
   };
 
-  const onNotCreateHandler = () => {
-    // const currentTag
-    // setNotes((prevNotes) => [...prevNotes, { title: title, text: note, tags }]);
+  const onNoteCreateHandler = () => {
+    setNotes(() => [...notes, { title: noteTitle, text: noteText }]);
+    setNoteTitle("");
+    setNoteText("");
+    setNoteModalActive(false);
   };
 
   const onNewTagHandler = () => {
-    setTags(() => [...tags, { name: tag }]);
+    setTags(() => [...tags, { label: tag.toLowerCase(), value: tag }]);
     setTag("");
     setTagModalActive(false);
   };
-
+  console.log("SELECTED: ", noteTags);
   return (
     <div className="App">
       <nav>
@@ -81,9 +86,16 @@ const App = () => {
           type="form__input"
           setValue={(e) => setNoteText(e.target.value)}
         />
-        <Select tagsArray={tags} />
+        {/* <Select
+          tagsArray={tags}
+          selectedTags={noteTags}
+          setSelectedTags={(event: MultiSelectChangeEvent) => {
+            console.log(event);
+            setNoteTags((old) => [...old, ...event.value]);
+          }}
+        /> */}
         <div className="btns-container">
-          <Button type="modal-btn" label="Save" onPress={onNotCreateHandler} />
+          <Button type="modal-btn" label="Save" onPress={onNoteCreateHandler} />
           <Button
             type="modal-btn"
             label="Cancel"
