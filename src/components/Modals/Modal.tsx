@@ -4,13 +4,22 @@ import "./modal.scss";
 export interface IModal {
   active: boolean;
   setActive?: (isActive: boolean) => void;
+  onClearStates?: () => void;
   children: ReactNode;
 }
 
-export const Modal = ({ active, setActive, children }: IModal) => {
+export const Modal = ({
+  active,
+  setActive,
+  onClearStates,
+  children,
+}: IModal) => {
   const setActiveHandler = () => {
     if (setActive) {
       setActive(false);
+    }
+    if (onClearStates) {
+      onClearStates();
     }
   };
 
